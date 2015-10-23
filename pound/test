@@ -1,0 +1,68 @@
+/usr/bin/ruby2.1 -I/var/lib/gems/2.1.0/gems/rspec-core-3.1.7/lib:/var/lib/gems/2.1.0/gems/rspec-support-3.1.2/lib /var/lib/gems/2.1.0/gems/rspec-core-3.1.7/exe/rspec --pattern spec/\{classes,defines,unit,functions,hosts,integration\}/\*\*/\*_spec.rb --color
+
+pound
+  supported operating systems
+    on debian-6-x86_64
+      pound class without any parameters
+        should compile into a catalogue without dependency cycles
+        should contain Class[pound::params]
+        should contain Class[pound::install] that comes before pound::config
+        should contain Class[pound::config]
+        should contain Class[pound::service] that subscribes to pound::config
+        should contain Service[pound]
+        should contain Package[pound] with ensure => "present"
+    on redhat-6-x86_64
+      pound class without any parameters
+        should compile into a catalogue without dependency cycles
+        should contain Class[pound::params]
+        should contain Class[pound::install] that comes before pound::config
+        should contain Class[pound::config]
+        should contain Class[pound::service] that subscribes to pound::config
+        should contain Service[pound]
+        should contain Package[pound] with ensure => "present"
+    on redhat-5-x86_64
+      pound class without any parameters
+        should compile into a catalogue without dependency cycles
+        should contain Class[pound::params]
+        should contain Class[pound::install] that comes before pound::config
+        should contain Class[pound::config]
+        should contain Class[pound::service] that subscribes to pound::config
+        should contain Service[pound]
+        should contain Package[pound] with ensure => "present"
+    on debian-7-x86_64
+      pound class without any parameters
+        should compile into a catalogue without dependency cycles
+        should contain Class[pound::params]
+        should contain Class[pound::install] that comes before pound::config
+        should contain Class[pound::config]
+        should contain Class[pound::service] that subscribes to pound::config
+        should contain Service[pound]
+        should contain Package[pound] with ensure => "present"
+    on redhat-7-x86_64
+      pound class without any parameters
+        should compile into a catalogue without dependency cycles
+        should contain Class[pound::params]
+        should contain Class[pound::install] that comes before pound::config
+        should contain Class[pound::config]
+        should contain Class[pound::service] that subscribes to pound::config
+        should contain Service[pound]
+        should contain Package[pound] with ensure => "present"
+  unsupported operating system
+    pound class without any parameters on Solaris/Nexenta
+      should contain Package[pound]
+
+Finished in 2.87 seconds (files took 1.21 seconds to load)
+36 examples, 0 failures
+Coverage report generated for RSpec to /home/absolootly/puppetmodules/pound/coverage. 0.0 / 0.0 LOC (100.0%) covered.
+
+COVERAGE: [0;32;49m100.00%[0m -- 0.0/0.0 lines in 0 files
+
+
+Total resources:   9
+Touched resources: 6
+Resource coverage: 66.67%
+Untouched resources:
+
+  Class[Pound]
+  File[/etc/default/pound]
+  File[/etc/pound/pound.cfg]

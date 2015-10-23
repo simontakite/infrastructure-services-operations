@@ -1,0 +1,66 @@
+global {
+	project edgesoft.local
+}
+superclass {
+	base {
+		network {
+			eth0 {
+				net nsa_master_net
+			}
+		}
+		openstack {
+			image Ubuntu14.04
+			flavor m1.tiny
+			keypair edgesoftkey
+            user_data {
+                # enable passwordless login from puppetmaster-ub1404.edgesoft.local on all hosts
+                echo "ssh-dss AAAAB3NzaC1kc3MAAACBANDJ3SNW29Q/u3yel/Btt9mcSSRbUpQdNNKEvDMFqSoM1DgdmJY2RTCkZvpMIFD1Fx16oxGO7LEDItRKQ7MX/t9Kczf9m4geXh9uO6bCiiyoOsU+ayP2hRY+qSxe1wsk2+xmQTW9tXM50pBuUPWLRRWrE9AD4324Sb3HwysIv67RAAAAFQDgSGnMgBNjISJm0iz+8dhXuZBRUQAAAIEAhy1G14hA1zB2llgDB3Z6LIP0mYCSY2s5ISwoXysfz2Ud2xEzmEy+VFMaLVGd5g1teajnF1urFZRMr+lsEyn9qeyAfWhwFumXMQEuqDMaupQ+ZY2VHY5Gqh/0ff7l6bnXF8LWL2LUzY5cw5z7kal7s3jVHJf25jg4zUK8UDZxhM4AAACBAKOpNMEp92dVUsMMddqk1yM5uOJOqCd0WgOcNRbTj6xX7l7BeR35oQopIbA01erfm3WeOCmkE1lZivylszzyt+NPJkfy61JyJveIGkQpsLIZgLVC/vJHN0SbpR8jzvZcZRfEtPf7fOzfVS1Hv+FOlDjub7TUULf55uVHASHWaLs2 ubuntu@puppetmaster-ub1404.edgesoft.local" >> /home/ubuntu/.ssh/authorized_keys
+
+                # Fix hostnames
+                echo $hostname.$project > /etc/hostname
+                hostname $hostname.$project
+
+                # Set norwegian locale
+                locale-gen nb_NB.UTF-8
+
+                # Install puppet agent
+                wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+                dpkg -i puppetlabs-release-trusty.deb
+                apt-get update
+                apt-get install -y puppet
+                echo 10.1.2.29 puppetmaster-ub1404.edgesoft.local puppetmaster puppet | sudo tee --append /etc/hosts
+                sed -i '/\/var\/log\/puppet/a \server=puppetmaster-ub1404.edgesoft.local' /etc/puppet/puppet.conf
+                sed -i s/START=no/START=yes/g /etc/default/puppet
+                service puppet restart
+                puppet agent --test --no-daemonize
+                echo "*/5 * * * * puppet agent --test --no-daemonize" > /etc/cron.d/puppetagent
+		service cron restart
+            	}
+	}
+	}
+}
+host {
+	loadbalancer-ub1404 {
+		superclass base
+	}
+	mysql01-ub1404 {
+		superclass base
+	}
+	mysql02-ub1404 {
+		superclass base
+	}
+  	web01-ub1404 {
+		superclass base
+	}
+  	web02-ub1404 {
+		superclass base
+	}
+  	cache-ub1404 {
+		superclass base
+	}
+  	test-ub1404 {
+		superclass base
+	}
+}
+switch {
+}

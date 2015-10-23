@@ -1,0 +1,51 @@
+## Minimal sample pound.cfg
+##
+## see pound(8) for details
+
+
+######################################################################
+## global options:
+
+User		"<%= @user %>"
+Group		"<%= @group %>"
+#RootJail	"/chroot/pound"
+
+## Logging: (goes to syslog by default)
+##	0	no logging
+##	1	normal
+##	2	extended
+##	3	Apache-style (common log format)
+LogLevel	1
+
+## check backend every X secs:
+Alive		<%= @alive %>
+
+## use hardware-accelleration card supported by openssl(1):
+#SSLEngine	"<hw>"
+
+# poundctl control socket
+Control "/var/run/pound/poundctl.socket"
+
+
+######################################################################
+## listen, redirect and ... to:
+
+## redirect all requests on port 8080 ("ListenHTTP") to the local webserver (see "Service" below):
+ListenHTTP
+	Address <%= @listen_address %> # all interfaces
+	Port <%= @listen_port %>
+	HeadRemove "X-Forwarded-For"
+
+	Service
+		BackEnd
+			Address 10.1.2.139
+			Port 80
+			Priority 1
+		End
+		BackEnd
+			Address 10.1.2.140
+			Port 80
+			Priority 1
+		End
+	End
+End
