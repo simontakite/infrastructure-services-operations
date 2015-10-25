@@ -17,8 +17,8 @@ superclass {
                 echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
 
                 # Fix hostnames
-                echo $hostname.$project > /etc/hostname
-                hostname $hostname.$project
+                echo $hostname > /etc/hostname
+                hostname $hostname
 
                 # Set norwegian locale
                 locale-gen nb_NB.UTF-8
