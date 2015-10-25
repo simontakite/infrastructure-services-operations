@@ -51,7 +51,7 @@ zabbixagent
     zabbixagent class without any parameters on Solaris/Nexenta
       should contain Package[zabbixagent]
 
-Finished in 2.03 seconds (files took 1.29 seconds to load)
+Finished in 1.96 seconds (files took 1.28 seconds to load)
 36 examples, 0 failures
 Coverage report generated for RSpec to /home/absolootly/ms017a/zabbixagent/coverage. 0.0 / 0.0 LOC (100.0%) covered.
 

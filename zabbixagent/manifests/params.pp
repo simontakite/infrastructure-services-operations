@@ -5,7 +5,7 @@
 #
 class zabbixagent::params {
   $zabbixconf           = '/etc/zabbix/zabbix_agentd.conf'
-  $zabbixconf_template  = 'zabbixagent/zabbix_agentd.conf'
+  $zabbixconf_template  = 'zabbixagent/zabbix_agentd.conf.erb'
   case $::osfamily {
     'Debian': {
       $package_name = 'zabbix-agent'
