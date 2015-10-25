@@ -10,11 +10,11 @@ superclass {
 		}
 		openstack {
 			image Ubuntu14.04
-			flavor m1.tiny
-			keypair edgesoftkey
+			flavor m1.medium
+			keypair loginkey
             user_data {
-                # enable passwordless login from puppetmaster-ub1404.edgesoft.local on all hosts
-                echo "ssh-dss AAAAB3NzaC1kc3MAAACBANDJ3SNW29Q/u3yel/Btt9mcSSRbUpQdNNKEvDMFqSoM1DgdmJY2RTCkZvpMIFD1Fx16oxGO7LEDItRKQ7MX/t9Kczf9m4geXh9uO6bCiiyoOsU+ayP2hRY+qSxe1wsk2+xmQTW9tXM50pBuUPWLRRWrE9AD4324Sb3HwysIv67RAAAAFQDgSGnMgBNjISJm0iz+8dhXuZBRUQAAAIEAhy1G14hA1zB2llgDB3Z6LIP0mYCSY2s5ISwoXysfz2Ud2xEzmEy+VFMaLVGd5g1teajnF1urFZRMr+lsEyn9qeyAfWhwFumXMQEuqDMaupQ+ZY2VHY5Gqh/0ff7l6bnXF8LWL2LUzY5cw5z7kal7s3jVHJf25jg4zUK8UDZxhM4AAACBAKOpNMEp92dVUsMMddqk1yM5uOJOqCd0WgOcNRbTj6xX7l7BeR35oQopIbA01erfm3WeOCmkE1lZivylszzyt+NPJkfy61JyJveIGkQpsLIZgLVC/vJHN0SbpR8jzvZcZRfEtPf7fOzfVS1Hv+FOlDjub7TUULf55uVHASHWaLs2 ubuntu@puppetmaster-ub1404.edgesoft.local" >> /home/ubuntu/.ssh/authorized_keys
+                # enable passwordless login from puppet.edgesoft.local on all hosts
+                echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
 
                 # Fix hostnames
                 echo $hostname.$project > /etc/hostname
@@ -23,42 +23,63 @@ superclass {
                 # Set norwegian locale
                 locale-gen nb_NB.UTF-8
 
+				# fix timezone
+				echo "Europe/Oslo" > /etc/timezone
+				dpkg-reconfigure --frontend noninteractive tzdata
+
+				# make swap
+				dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+				chmod 0600 /swapfile
+				mkswap /swapfile > /dev/null
+				swapon /swapfile > /dev/null
+				echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
+
                 # Install puppet agent
                 wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
                 dpkg -i puppetlabs-release-trusty.deb
                 apt-get update
                 apt-get install -y puppet
-                echo 10.1.2.29 puppetmaster-ub1404.edgesoft.local puppetmaster puppet | sudo tee --append /etc/hosts
-                sed -i '/\/var\/log\/puppet/a \server=puppetmaster-ub1404.edgesoft.local' /etc/puppet/puppet.conf
+                echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+                sed -i '/\/var\/log\/puppet/a \server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
                 sed -i s/START=no/START=yes/g /etc/default/puppet
                 service puppet restart
-                puppet agent --test --no-daemonize
-                echo "*/5 * * * * puppet agent --test --no-daemonize" > /etc/cron.d/puppetagent
-		service cron restart
-            	}
-	}
+                sudo puppet agent --test --no-daemonize
+            }
+		}
 	}
 }
 host {
-	loadbalancer-ub1404 {
+	web01-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-	mysql01-ub1404 {
+	web02-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-	mysql02-ub1404 {
+	elk-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-  	web01-ub1404 {
+	prx01-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-  	web02-ub1404 {
+	sql01-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-  	cache-ub1404 {
+	sql02-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
-  	test-ub1404 {
+	storage01-ub1404v.prd.oslo.edgelsoft.local {
+		superclass base
+	}
+	storage02-ub1404v.prd.oslo.edgelsoft.local {
+		superclass base
+	}
+	bak01-ub1404v.prd.oslo.edgelsoft.local {
+		superclass base
+	}
+	bak02-ub1404v.prd.oslo.edgelsoft.local {
+		superclass base
+	}
+	test-ub1404v.prd.oslo.edgelsoft.local {
 		superclass base
 	}
 }
