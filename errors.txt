@@ -1,0 +1,572 @@
++---> BUILDING edgesoft.local
+++ printing Superclasses ++
+--> Superclass base
+base: template = Debian-4.0.ext3
+printing network
+base: Network interfaces
+Interface eth0
+++ printing Hosts ++
+--> Host storage02-ub1404v.prd.oslo.edgelsoft.local
+storage02-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+storage02-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+storage02-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host bak01-ub1404v.prd.oslo.edgelsoft.local
+bak01-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+bak01-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+bak01-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host sql01-ub1404v.prd.oslo.edgelsoft.local
+sql01-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+sql01-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+sql01-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host prx01-ub1404v.prd.oslo.edgelsoft.local
+prx01-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+prx01-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+prx01-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host elk-ub1404v.prd.oslo.edgelsoft.local
+elk-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+elk-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+elk-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host test-ub1404v.prd.oslo.edgelsoft.local
+test-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+test-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+test-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host storage01-ub1404v.prd.oslo.edgelsoft.local
+storage01-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+storage01-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+storage01-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host sql02-ub1404v.prd.oslo.edgelsoft.local
+sql02-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+sql02-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+sql02-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host bak02-ub1404v.prd.oslo.edgelsoft.local
+bak02-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+bak02-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+bak02-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host web02-ub1404v.prd.oslo.edgelsoft.local
+web02-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+web02-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+web02-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+--> Host web01-ub1404v.prd.oslo.edgelsoft.local
+web01-ub1404v.prd.oslo.edgelsoft.local: superclass = 'base'
+web01-ub1404v.prd.oslo.edgelsoft.local: template = Debian-4.0.ext3
+printing network
+web01-ub1404v.prd.oslo.edgelsoft.local: Network interfaces
+Interface eth0
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+VERBOSE: Warning: getVariable called and is no longer supported
+Saving Config file: /opt/mln/projects/root/edgesoft.local/edgesoft.local.mln
+---> storage02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for storage02-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is storage02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo storage02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is storage02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname storage02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo storage02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname storage02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for storage02-ub1404v.prd.oslo.edgelsoft.local
+---> bak01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for bak01-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is bak01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo bak01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is bak01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname bak01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo bak01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname bak01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for bak01-ub1404v.prd.oslo.edgelsoft.local
+---> sql01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for sql01-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is sql01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo sql01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is sql01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname sql01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo sql01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname sql01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for sql01-ub1404v.prd.oslo.edgelsoft.local
+---> prx01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for prx01-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is prx01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo prx01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is prx01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname prx01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo prx01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname prx01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for prx01-ub1404v.prd.oslo.edgelsoft.local
+---> elk-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for elk-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is elk-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo elk-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is elk-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname elk-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo elk-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname elk-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for elk-ub1404v.prd.oslo.edgelsoft.local
+---> test-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for test-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is test-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo test-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is test-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname test-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo test-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname test-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for test-ub1404v.prd.oslo.edgelsoft.local
+---> storage01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for storage01-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is storage01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo storage01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is storage01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname storage01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo storage01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname storage01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for storage01-ub1404v.prd.oslo.edgelsoft.local
+---> sql02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for sql02-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is sql02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo sql02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is sql02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname sql02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo sql02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname sql02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for sql02-ub1404v.prd.oslo.edgelsoft.local
+---> bak02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for bak02-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is bak02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo bak02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is bak02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname bak02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo bak02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname bak02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for bak02-ub1404v.prd.oslo.edgelsoft.local
+---> web02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for web02-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is web02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo web02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is web02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname web02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo web02-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname web02-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for web02-ub1404v.prd.oslo.edgelsoft.local
+---> web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Calling plugin method vmware_createFilesystem
+VERBOSE: Calling plugin method openstack_createFilesystem
+openstack enabled
+VERBOSE:  using OpenStack image Ubuntu14.04
+VERBOSE: openstack_createFilesystem did filesystem creation
+VERBOSE: Calling plugin method openstack_configureEntireFilesystem
+VERBOSE: OPENSTACK_CREDS: --os-username s307043 --os-password 'Ge6y56yz' --os-tenant-name edgesoft_project --os-auth-url 'https://128.39.121.2:5000/v2/'
+Creating start/stop scripts for web01-ub1404v.prd.oslo.edgelsoft.local on OpenStack
+VERBOSE: OpenStack:  checking for volumes
+OpenStack:  got flavor ID 
+VERBOSE: OpenStack:  looking for image Ubuntu14.04
+OpenStack:  got image ID 
+VERBOSE: OpenStack:  connecting eth0 to 'nsa_master_net'
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: echo web01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: Looking for variable: $hostname
+VERBOSE: Variable calls for hostname in path: /superclass/base/openstack/user_data
+VERBOSE: Hostname is web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: Returning: hostname web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+VERBOSE: OpenStack:  adding user_data: echo web01-ub1404v.prd.oslo.edgelsoft.local > /etc/hostname
+VERBOSE: OpenStack:  adding user_data: hostname web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: OpenStack:  adding user_data: locale-gen nb_NB.UTF-8
+VERBOSE: OpenStack:  adding user_data: echo "Europe/Oslo" > /etc/timezone
+VERBOSE: OpenStack:  adding user_data: dpkg-reconfigure --frontend noninteractive tzdata
+VERBOSE: OpenStack:  adding user_data: dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+VERBOSE: OpenStack:  adding user_data: chmod 0600 /swapfile
+VERBOSE: OpenStack:  adding user_data: mkswap /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: swapon /swapfile > /dev/null
+VERBOSE: OpenStack:  adding user_data: echo "/swapfile none swap sw 0 0" >> /etc/fstab
+VERBOSE: OpenStack:  adding user_data: wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: dpkg -i puppetlabs-release-trusty.deb
+VERBOSE: OpenStack:  adding user_data: apt-get update
+VERBOSE: OpenStack:  adding user_data: apt-get install -y puppet
+VERBOSE: OpenStack:  adding user_data: echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+VERBOSE: OpenStack:  adding user_data: sed -i '//var/log/puppet/a server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+VERBOSE: OpenStack:  adding user_data: sed -i s/START=no/START=yes/g /etc/default/puppet
+VERBOSE: OpenStack:  adding user_data: service puppet restart
+VERBOSE: OpenStack:  adding user_data: sudo puppet agent --test --no-daemonize
+VERBOSE: Calling plugin method puppet_postBuild
+VERBOSE: PUPPET:  puppet plugin called for web01-ub1404v.prd.oslo.edgelsoft.local
+VERBOSE: setting version to 1
++---> PROJECT edgesoft.local FINISHED 

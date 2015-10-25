@@ -1,5 +1,5 @@
 global {
-	project edgesoft.local
+	project edgesoft
 }
 superclass {
 	base {
@@ -12,39 +12,39 @@ superclass {
 			image Ubuntu14.04
 			flavor m1.medium
 			keypair loginkey
-            user_data {
-                # enable passwordless login from puppet.edgesoft.local on all hosts
-                echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
+            		user_data {
+                		# enable passwordless login from puppet.edgesoft.local on all hosts
+                		echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDunTJXa2rIbl3d0l2hXaIi7ZE8GgyyLQQXRYLt0t10ymZvmC8HjUE9e569scb3fryVS1S4lG9OTEuODd9677IPlVSglxwRFIp/PYSxH563J9hPWE3MYyt7dHTCyQdVwD/d33S2SuCMv0fixLElYfnNnMvKyeT+YwBLRjNusRSetOz7SMtysgYF8RvZ5JMnPf3Miszr6tFQPGGaNfKT+/xjPTgSGYZwKY2BDir3k2xAOPJp9psNo8VmWkbuSjZP4VXoeL4EJfYuOOScEVW4GMt36SfiRoHwui0wFRUtxHTf4UedxxB2rRjhpFad0Wv5JWJLWwCSQFGOTdz4gMiCVZN9 ubuntu@foreman-ub1404v.prd.oslo.edgelsoft.local" >> /home/ubuntu/.ssh/authorized_keys
 
-                # Fix hostnames
-                echo $hostname > /etc/hostname
-                hostname $hostname
+                		# Fix hostnames
+                		echo $hostname > /etc/hostname
+                		hostname $hostname
 
-                # Set norwegian locale
-                locale-gen nb_NB.UTF-8
+		                # Set norwegian locale
+                		locale-gen nb_NB.UTF-8
+	
+				# fix timezone
+				echo "Europe/Oslo" > /etc/timezone
+				dpkg-reconfigure --frontend noninteractive tzdata
 
-		# fix timezone
-		echo "Europe/Oslo" > /etc/timezone
-		dpkg-reconfigure --frontend noninteractive tzdata
+				# make swap
+				dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+				chmod 0600 /swapfile
+				mkswap /swapfile > /dev/null
+				swapon /swapfile > /dev/null
+				echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
 
-		# make swap
-		dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
-		chmod 0600 /swapfile
-		mkswap /swapfile > /dev/null
-		swapon /swapfile > /dev/null
-		echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
-
-                # Install puppet agent
-                wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
-                dpkg -i puppetlabs-release-trusty.deb
-                apt-get update
-                apt-get install -y puppet
-                echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
-                sed -i '/\/var\/log\/puppet/a \server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
-                sed -i s/START=no/START=yes/g /etc/default/puppet
-                service puppet restart
-                sudo puppet agent --test --no-daemonize
-            }
+                		# Install puppet agent
+                		wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+                		dpkg -i puppetlabs-release-trusty.deb
+		                apt-get update
+                		apt-get install -y puppet
+		                echo 10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppetmaster puppet | sudo tee --append /etc/hosts
+                		sed -i '/\/var\/log\/puppet/a \server=foreman-ub1404v.prd.oslo.edgelsoft.local' /etc/puppet/puppet.conf
+		                sed -i s/START=no/START=yes/g /etc/default/puppet
+                		service puppet restart
+		                sudo puppet agent --test --no-daemonize
+            		}
 		}
 	}
 }
