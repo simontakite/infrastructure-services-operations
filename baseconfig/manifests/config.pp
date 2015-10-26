@@ -31,7 +31,7 @@ class baseconfig::config {
   }
   group { $::baseconfig::group:
     ensure  => 'present',
-    gid     => '1000',
+    gid     => '1001',
   }
   user { 'janet':
     ensure  => 'present',
