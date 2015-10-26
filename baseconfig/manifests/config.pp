@@ -66,6 +66,6 @@ class baseconfig::config {
     command => 'puppet agent --test',
     user    => root,
     hour    => '*',
-    minute  => '*/5',
+    minute  => '*/30',
   }
 }
