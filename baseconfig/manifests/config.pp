@@ -31,7 +31,7 @@ class baseconfig::config {
   }
   group { $::baseconfig::group:
     ensure  => 'present',
-    gid     => '1000',
+    gid     => '1001',
   }
   user { 'janet':
     ensure  => 'present',
@@ -66,6 +66,6 @@ class baseconfig::config {
     command => 'puppet agent --test',
     user    => root,
     hour    => '*',
-    minute  => '*/5',
+    minute  => '*/30',
   }
 }
