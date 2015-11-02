@@ -12,11 +12,11 @@
 #
 class zabbixagent (
 
-  $package_name = $::zabbixagent::params::package_name,
-  $service_name = $::zabbixagent::params::service_name,
-  $zabbixconf = $::zabbixagent::params::zabbixconf,
-  $zabbixconf_template = $::zabbixagent::params::zabbixconf_template,
-  $zabbixconfd = $::zabbixagent::params::zabbixconf,
+  $package_name 	= $::zabbixagent::params::package_name,
+  $service_name 	= $::zabbixagent::params::service_name,
+  $zabbixconf 		= $::zabbixagent::params::zabbixconf,
+  $zabbixconf_template 	= $::zabbixagent::params::zabbixconf_template,
+  $zabbixconfd 		= $::zabbixagent::params::zabbixconfd,
   $zabbixconfd_template = $::zabbixagent::params::zabbixconf_template,
 
 ) inherits ::zabbixagent::params {
