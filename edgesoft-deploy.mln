@@ -1,5 +1,5 @@
 global {
-	project edgesoft.local
+	project edgesoft
 }
 superclass {
 	base {
@@ -23,16 +23,16 @@ superclass {
                 # Set norwegian locale
                 locale-gen nb_NB.UTF-8
 
-				# fix timezone
-				echo "Europe/Oslo" > /etc/timezone
-				dpkg-reconfigure --frontend noninteractive tzdata
+		# fix timezone
+		echo "Europe/Oslo" > /etc/timezone
+		dpkg-reconfigure --frontend noninteractive tzdata
 
-				# make swap
-				dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
-				chmod 0600 /swapfile
-				mkswap /swapfile > /dev/null
-				swapon /swapfile > /dev/null
-				echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
+		# make swap
+		dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
+		chmod 0600 /swapfile
+		mkswap /swapfile > /dev/null
+		swapon /swapfile > /dev/null
+		echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
 
                 # Install puppet agent
                 wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb

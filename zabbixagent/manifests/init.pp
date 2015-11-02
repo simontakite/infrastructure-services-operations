@@ -16,6 +16,8 @@ class zabbixagent (
   $service_name = $::zabbixagent::params::service_name,
   $zabbixconf = $::zabbixagent::params::zabbixconf,
   $zabbixconf_template = $::zabbixagent::params::zabbixconf_template,
+  $zabbixconfd = $::zabbixagent::params::zabbixconf,
+  $zabbixconfd_template = $::zabbixagent::params::zabbixconf_template,
 
 ) inherits ::zabbixagent::params {
 

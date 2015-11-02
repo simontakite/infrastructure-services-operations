@@ -4,8 +4,12 @@
 # It sets variables according to platform.
 #
 class zabbixagent::params {
-  $zabbixconf           = '/etc/zabbix/zabbix_agentd.conf'
-  $zabbixconf_template  = 'zabbixagent/zabbix_agentd.conf'
+
+  $zabbixconf           	= '/etc/zabbix/zabbix_agent.conf'
+  $zabbixconfd           	= '/etc/zabbix/zabbix_agentd.conf'
+  $zabbixconf_template  	= 'zabbixagent/zabbix_agent.conf.erb'
+  $zabbixconfd_template  	= 'zabbixagent/zabbix_agentd.conf.erb'
+
   case $::osfamily {
     'Debian': {
       $package_name = 'zabbix-agent'

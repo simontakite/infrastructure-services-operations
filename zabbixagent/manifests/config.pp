@@ -9,4 +9,10 @@ class zabbixagent::config {
       group   => 'root',
       content => template($zabbixagent::zabbixconf_template),
     }
+    file { $::zabbixagent::zabbixconfd:
+      mode    => '0644',
+      owner   => 'root',
+      group   => 'root',
+      content => template($zabbixagent::zabbixconfd_template),
+    }
 }
