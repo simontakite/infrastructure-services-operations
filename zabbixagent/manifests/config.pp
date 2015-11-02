@@ -3,18 +3,25 @@
 # This class is called from zabbixagent for service config.
 #
 class zabbixagent::config {
+	
+	file {"/etc/zabbix/zabbix_agent.conf":
+		ensure  => 'present',
+		mode    => '0644',
+		owner   => 'root',
+		group   => 'root',
+		source  => "puppet:///modules/zabbixagent/zabbix_agent.conf",
+		require => Package['zabbix-agent'],
+		notify  => Service['zabbix_agentd'],
+	}
+	
+	file {"/etc/zabbix/zabbix_agentd.conf":
+		ensure  => 'present',
+		mode    => '0644',
+		owner   => 'root',
+		group   => 'root',
+		source  => "puppet:///modules/zabbixagent/zabbix_agentd.conf",
+		require => Package['zabbix-agent'],
+		notify  => Service['zabbix_agentd'],
+	}
 
-    file { $::zabbixagent::zabbixconf:
-      mode    => '0644',
-      owner   => 'root',
-      group   => 'root',
-      content => template($zabbixagent::zabbixconf_template),
-    }
-
-    file { $::zabbixagent::zabbixconfd:
-      mode    => '0644',
-      owner   => 'root',
-      group   => 'root',
-      content => template($zabbixagent::zabbixconfd_template),
-    }
 }

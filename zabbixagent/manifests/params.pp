@@ -7,17 +7,15 @@ class zabbixagent::params {
 
   $zabbixconf           	= '/etc/zabbix/zabbix_agent.conf'
   $zabbixconfd           	= '/etc/zabbix/zabbix_agentd.conf'
-  $zabbixconf_template  	= 'zabbixagent/zabbix_agent.conf.erb'
-  $zabbixconfd_template  	= 'zabbixagent/zabbix_agentd.conf.erb'
 
   case $::osfamily {
     'Debian': {
       $package_name = 'zabbix-agent'
-      $service_name = 'zabbix-agent'
+      $service_name = 'zabbix_agentd'
     }
     'RedHat', 'Amazon': {
       $package_name = 'zabbix-agent'
-      $service_name = 'zabbix-agent'
+      $service_name = 'zabbix_agentd'
     }
     default: {
       fail("${::operatingsystem} not supported")
