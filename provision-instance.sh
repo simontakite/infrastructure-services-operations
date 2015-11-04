@@ -1,4 +1,4 @@
-!#/bin/bash
+#!/bin/bash
 
 # Timezone
 echo "Europe/Oslo" > /etc/timezone
@@ -62,18 +62,17 @@ cat > /etc/logstash-forwarder.conf <<EOF
   # The list of files configurations
   "files": [
     {
-      "paths": ["/var/log/syslog"],
-      "fields": { "type": "syslog" }
-    }, {
-      "paths": [ "/var/log/apache2/access.log" ],
-      "fields": { "type": "apache" }
-    }, {
-      "paths": [ "/var/log/auth.log" ],
+      "paths": [
+        "/var/log/syslog",
+        "/var/log/auth.log"
+       ],
       "fields": { "type": "syslog" }
     }
   ]
 }
 EOF
+#restart logstash-forwarder
+/etc/init.d/logstash-forwarder restart
 
 # INSTALL ZABBIX
 apt-get update
