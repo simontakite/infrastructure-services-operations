@@ -11,7 +11,7 @@ class zabbixagent::config {
 		group   => 'root',
 		source  => "puppet:///modules/zabbixagent/zabbix_agent.conf",
 		require => Package['zabbix-agent'],
-		notify  => Service['zabbix_agentd'],
+		notify  => Service['zabbix-agent'],
 	}
 	
 	file {"/etc/zabbix/zabbix_agentd.conf":
@@ -21,7 +21,7 @@ class zabbixagent::config {
 		group   => 'root',
 		source  => "puppet:///modules/zabbixagent/zabbix_agentd.conf",
 		require => Package['zabbix-agent'],
-		notify  => Service['zabbix_agentd'],
+		notify  => Service['zabbix-agent'],
 	}
 
 }

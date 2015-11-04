@@ -11,11 +11,11 @@ class zabbixagent::params {
   case $::osfamily {
     'Debian': {
       $package_name = 'zabbix-agent'
-      $service_name = 'zabbix_agentd'
+      $service_name = 'zabbix-agent'
     }
     'RedHat', 'Amazon': {
       $package_name = 'zabbix-agent'
-      $service_name = 'zabbix_agentd'
+      $service_name = 'zabbix-agent'
     }
     default: {
       fail("${::operatingsystem} not supported")

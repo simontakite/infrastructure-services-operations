@@ -1,0 +1,33 @@
+{
+  "name": "edgesoft-memcached",
+  "version": "0.1.0",
+  "author": "Simon Takite",
+  "summary": "This module installs and configures memcached",
+  "license": "Apache-2.0",
+  "source": "https://git.cs.hioa.no/s307043/puppet-modules",
+  "project_page": "https://git.cs.hioa.no/s307043/puppet-modules",
+  "issues_url": "https://git.cs.hioa.no/s307043/puppet-modules",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}

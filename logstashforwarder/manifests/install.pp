@@ -4,7 +4,12 @@
 #
 class logstashforwarder::install {
 
-  package { $::logstashforwarder::package_name:
-    ensure => present,
-  }
+	package { "logstash-forwarder":
+		name 		=> "logstash-forwarder",
+        	ensure		=> installed,
+        	provider	=> dpkg,
+          	source  	=> 'puppet:///modules/logstashforwarder/logstash-forwarder_0.4.0_amd64.deb',
+#		notify		=> Package ['logstash-forwarder'],
+	}
+
 }
