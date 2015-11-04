@@ -120,6 +120,26 @@ wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 dpkg -i puppetlabs-release-trusty.deb
 apt-get update
 apt-get -y install puppet
+
+cat > /etc/default/puppet <<EOF
+# Defaults for puppet - sourced by /etc/init.d/puppet
+
+# Enable puppet agent service?
+# Setting this to "yes" allows the puppet agent service to run.
+# Setting this to "no" keeps the puppet agent service from running.
+START=yes
+
+# Startup options
+DAEMON_OPTS=""
+EOF
+
+# Local puppet version
+cat > /etc/apt/preferences.d/00-puppet.pref<<EOF
+Package: puppet puppet-common
+Pin: version 3.8*
+Pin-Priority: 501
+EOF
+
 cat > /etc/puppet/puppet.conf<<EOF
 [main]
 logdir=/var/log/puppet
@@ -139,17 +159,6 @@ ssl_client_header = SSL_CLIENT_S_DN
 ssl_client_verify_header = SSL_CLIENT_VERIFY
 EOF
 
-cat > /etc/default/puppet <<EOF
-# Defaults for puppet - sourced by /etc/init.d/puppet
-
-# Enable puppet agent service?
-# Setting this to "yes" allows the puppet agent service to run.
-# Setting this to "no" keeps the puppet agent service from running.
-START=yes
-
-# Startup options
-DAEMON_OPTS=""
-EOF
 # Restart puppet 
 service puppet restart
-puppet agent --test --no-daemonize
+puppet agent --test 
