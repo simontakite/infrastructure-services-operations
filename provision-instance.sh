@@ -1,12 +1,18 @@
 !#/bin/bash
 
+# Timezone
+echo "Europe/Oslo" > /etc/timezone
+dpkg-reconfigure --frontend=noninteractive tzdata
+
+# Set norwegian locale
+locale-gen nb_NB.UTF-8
+
 # make swap
 dd if=/dev/zero of=/swapfile bs=1G count=4 > /dev/null
 chmod 0600 /swapfile
 mkswap /swapfile > /dev/null
 swapon /swapfile > /dev/null
 echo "/swapfile   none    swap    sw    0   0" >> /etc/fstab
-	
 
 # INSTALL LOGSTASH-FORWARDER
 wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | sudo apt-key add -
@@ -17,6 +23,8 @@ chmod +x /etc/init.d/logstash-forwarder
 update-rc.d logstash-forwarder defaults
 
 # Populate logstash-forwarder cert file
+mkdir -p /etc/pki/tls/certs/
+touch /etc/pki/tls/certs/logstash-forwarder.crt
 cat > /etc/pki/tls/certs/logstash-forwarder.crt <<EOF
 -----BEGIN CERTIFICATE-----
 MIIDbjCCAlagAwIBAgIJAMmkbtpdhE3hMA0GCSqGSIb3DQEBCwUAMEUxCzAJBgNV
@@ -70,6 +78,7 @@ EOF
 # INSTALL ZABBIX
 apt-get update
 apt-get -y install zabbix-agent
+
 cat > /etc/zabbix/zabbix_agent.conf <<EOF
 PidFile=/var/run/zabbix/zabbix_agentd.pid
 LogFile=/var/log/zabbix-agent/zabbix_agentd.log
@@ -79,6 +88,17 @@ Server=10.1.1.134
 ListenPort=10050
 Include=/etc/zabbix/zabbix_agentd.conf.d/
 EOF
+
+cat > /etc/zabbix/zabbix_agentd.conf<<EOF
+PidFile=/var/run/zabbix/zabbix_agentd.pid
+LogFile=/var/log/zabbix-agent/zabbix_agentd.log
+LogFileSize=0
+Server=10.1.1.134
+#ServerActive=127.0.0.1
+#Hostname=Zabbix server
+Include=/etc/zabbix/zabbix_agentd.conf.d/
+EOF
+
 # Restart zabbix
 service zabbix-agent restart
 
