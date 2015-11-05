@@ -3,12 +3,14 @@
 # This class is called from baseconfig for service config.
 #
 class baseconfig::config {
+
   file { $::baseconfig::motdfile:
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
     source  => 'puppet:///modules/baseconfig/motd',
   }
+
   file { $::baseconfig::sudofile:
     ensure  => 'file',
     group   => '0',
@@ -16,6 +18,7 @@ class baseconfig::config {
     owner   => '0',
     source  => 'puppet:///modules/baseconfig/sudoers',
   }
+
   file { $::baseconfig::vimrcfile:
     ensure  => 'file',
     group   => '0',
@@ -23,16 +26,19 @@ class baseconfig::config {
     owner   => '0',
     source  => 'puppet:///modules/baseconfig/vimrc',
   }
+
   file { $::baseconfig::hostfile:
     mode    => '0644',
     owner   => 'root',
     group   => 'root',
     content => template($baseconfig::host_template),
   }
+
   group { $::baseconfig::group:
     ensure  => 'present',
     gid     => '1001',
   }
+
   user { 'janet':
     ensure  => 'present',
     comment => 'janet,,,',
@@ -40,17 +46,21 @@ class baseconfig::config {
     groups  => ['sudo', 'webadmins'],
     home    => '/home/janet',
     shell   => '/bin/bash',
+    password => '$1$9l680kjZ$heTOkf0wykdRTqdP4jIvw/',
     uid     => '1003',
   }
+
   user { 'tom':
     ensure  => 'present',
     comment => 'tom,,,',
     gid     => '1001',
     groups  => ['sudo', 'webadmins'],
     home    => '/home/tom',
-    shell   => '/bin/bash',
+    shell   => '/bin/bash' ,
+    password => '$1$9l680kjZ$heTOkf0wykdRTqdP4jIvw/',
     uid     => '1004',
   }
+
   user { 'brady':
     ensure  => 'present',
     comment => 'brady,,,',
@@ -58,6 +68,7 @@ class baseconfig::config {
     groups  => ['sudo', 'webadmins'],
     home    => '/home/brady',
     shell   => '/bin/bash',
+    password => '$1$9l680kjZ$heTOkf0wykdRTqdP4jIvw/',
     uid     => '1005',
   }
 
@@ -68,4 +79,5 @@ class baseconfig::config {
     hour    => '*',
     minute  => '*/30',
   }
+
 }
