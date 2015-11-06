@@ -1,0 +1,14 @@
+{
+  "name": "simon-backuprunner",
+  "version": "0.1.0",
+  "author": "Simon Takite",
+  "summary": "Module to run backups",
+  "license": "Apache 2.0",
+  "source": "https://github.com/simontakite/ms017a",
+  "project_page": "https://github.com/simontakite/ms017a",
+  "issues_url": "https://github.com/simontakite/ms017a/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
