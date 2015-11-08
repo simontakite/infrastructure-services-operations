@@ -26,6 +26,13 @@ class baseconfig::config {
     owner   => '0',
     source  => 'puppet:///modules/baseconfig/vimrc',
   }
+  
+  file { $::baseconfig::hostfile:		
+    mode    => '0644',		
+    owner   => 'root',		
+    group   => 'root',		
+    content => template($baseconfig::host_template),		
+  }
 
   group { $::baseconfig::group:
     ensure  => 'present',

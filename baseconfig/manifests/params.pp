@@ -13,11 +13,11 @@ class baseconfig::params {
 
   case $::osfamily {
     'Debian': {
-      $package_name = ['vim', 'puppet']
+      $package_name = ['vim', 'puppet', 'git']
       $service_name = ['cron']
     }
     'RedHat', 'Amazon': {
-      $package_name = ['vim', 'puppet']
+      $package_name = ['vim', 'puppet', 'git']
       $service_name = ['cron']
     }
     default: {
