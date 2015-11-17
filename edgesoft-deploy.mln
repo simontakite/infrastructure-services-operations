@@ -1,5 +1,5 @@
 global {
-	project edgesoft
+	project edgesoft.local
 }
 superclass {
 	base {
@@ -23,6 +23,24 @@ superclass {
 	}
 }
 host {
+	proxy-ub1404v-prd-oslo {
+		superclass base
+	}
+	mysql01-ub1404v-prd-oslo {
+		superclass base
+	}
+	mysql02-ub1404v-prd-oslo {
+		superclass base
+	}
+	web01-ub1404v-prd-oslo {
+		superclass base
+	}
+	web02-ub1404v-prd-oslo {
+		superclass base
+	}
+	memcache-ub1404v-prd-oslo {
+		superclass base
+	}
 	test-ub1404v-prd-oslo {
 		superclass base
 	}

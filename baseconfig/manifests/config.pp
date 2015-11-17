@@ -36,13 +36,11 @@ class baseconfig::config {
 
   group { $::baseconfig::group:
     ensure  => 'present',
-    gid     => '1001',
   }
 
   user { 'janet':
     ensure  => 'present',
     comment => 'janet,,,',
-    gid     => '1001',
     groups  => ['sudo', 'webadmins'],
     home    => '/home/janet',
     shell   => '/bin/bash',
@@ -53,7 +51,6 @@ class baseconfig::config {
   user { 'tom':
     ensure  => 'present',
     comment => 'tom,,,',
-    gid     => '1001',
     groups  => ['sudo', 'webadmins'],
     home    => '/home/tom',
     shell   => '/bin/bash' ,
@@ -64,7 +61,7 @@ class baseconfig::config {
   user { 'brady':
     ensure  => 'present',
     comment => 'brady,,,',
-    gid     => '1001',
+  #  gid     => '1001',
     groups  => ['sudo', 'webadmins'],
     home    => '/home/brady',
     shell   => '/bin/bash',

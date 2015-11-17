@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Host file
+echo "10.1.0.182 foreman-ub1404v.prd.oslo.edgelsoft.local foreman puppet" >> /etc/hosts
+
 # Timezone
 echo "Europe/Oslo" > /etc/timezone
 dpkg-reconfigure --frontend=noninteractive tzdata
