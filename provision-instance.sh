@@ -161,4 +161,5 @@ EOF
 
 # Restart puppet 
 service puppet restart
+puppet agent --enable
 puppet agent --test 
