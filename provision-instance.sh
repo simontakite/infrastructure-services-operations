@@ -117,7 +117,6 @@ mkdir -p /mnt/data
 mount 10.1.1.199:/mnt/servers /mnt/data
 echo "mount 10.1.1.199:/mnt/servers /mnt/data nfs rw,hard,intr 0 0" >> /etc/fstab
 
-
 # INSTALL PUPPET AGENT
 wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 dpkg -i puppetlabs-release-trusty.deb
@@ -159,7 +158,9 @@ ssl_client_header = SSL_CLIENT_S_DN
 ssl_client_verify_header = SSL_CLIENT_VERIFY
 EOF
 
+
 # Restart puppet 
 service puppet restart
+
 puppet agent --enable
 puppet agent --test 

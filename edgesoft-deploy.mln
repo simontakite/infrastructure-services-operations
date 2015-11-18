@@ -14,7 +14,11 @@ superclass {
 			keypair loginkey
             		user_data {
 					# Hostnames
-					echo $hostname > /etc/hostname
+                 			# echo $hostname.$project > /etc/hostname
+					sed -i "s/127.0.0.1 localhost/127.0.0.1 $hostname.$project/g" /etc/hosts
+					hostname $hostname.$project
+					
+					# Get provision script
 					wget -O /tmp/provision-instance.sh https://raw.githubusercontent.com/simontakite/ms017a/master/provision-instance.sh
 					chmod +x /tmp/provision-instance.sh
 					./tmp/provision-instance.sh
@@ -23,24 +27,24 @@ superclass {
 	}
 }
 host {
-	proxy-ub1404v-prd-oslo {
-		superclass base
-	}
-	mysql01-ub1404v-prd-oslo {
-		superclass base
-	}
-	mysql02-ub1404v-prd-oslo {
-		superclass base
-	}
-	web01-ub1404v-prd-oslo {
-		superclass base
-	}
-	web02-ub1404v-prd-oslo {
-		superclass base
-	}
-	memcache-ub1404v-prd-oslo {
-		superclass base
-	}
+#	proxy-ub1404v-prd-oslo {
+#		superclass base
+#	}
+#	mysql01-ub1404v-prd-oslo {
+#		superclass base
+#	}
+#	mysql02-ub1404v-prd-oslo {
+#		superclass base
+#	}
+#	web01-ub1404v-prd-oslo {
+#		superclass base
+#	}
+#	web02-ub1404v-prd-oslo {
+#		superclass base
+#	}
+#	memcache-ub1404v-prd-oslo {
+#		superclass base
+#	}
 	test-ub1404v-prd-oslo {
 		superclass base
 	}
